@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>احسب تقسيم الميراث — الميراث by Touil</title>
+<meta name="description" content="أدخل بيانات عائلتك وشاهد تقسيم الميراث وفق القرآن والسنة مع أدلته. يُحسب في متصفحك، ولا تُرسل أي بيانات إلى أي مكان.">
+<meta name="theme-color" content="#FFF8F0">
+<link rel="icon" href="assets/mark-color.svg">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/tokens.css?v=24">
+<link rel="stylesheet" href="css/base.css?v=24">
+<link rel="stylesheet" href="css/app.css?v=24">
+<link rel="stylesheet" href="css/rtl.css?v=24">
+<link rel="stylesheet" href="css/print.css?v=24" media="print">
+</head>
+<body>
+<a class="skip-link" href="#utama">الانتقال إلى المحتوى</a>
+
+<script src="js/sprite.js?v=24"></script>
+
+<!-- ═══ القائمة ═══ -->
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img src="assets/mark-color.svg" alt="">
+      <span class="nav-brand-teks">
+        <span class="nav-brand-nama">الميراث</span>
+        <span class="nav-brand-sub">by Touil</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" id="nav-toggle"
+            aria-expanded="false" aria-controls="nav-menu" aria-label="افتح القائمة">
+      <span class="nav-toggle-garis"></span>
+    </button>
+
+    <div class="nav-menu" id="nav-menu">
+      <a href="index.html">الرئيسية</a>
+      <a href="hitung.html">احسب</a>
+      <a href="rujukan.html">المراجع</a>
+      <button class="btn btn-ghost btn-sm" id="btn-mulai-ulang" type="button">
+        <svg class="ic ic-sm" aria-hidden="true"><use href="#i-ulang"></use></svg> إعادة من البداية
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main id="utama">
+
+  <!-- ═══ الخطوات ═══ -->
+  <section class="section" id="wizard" style="padding-top: var(--space-8)">
+    <div class="wrap wrap-narrow">
+      <div class="progres-teks" id="progres-teks">الخطوة 1 من 5</div>
+      <div class="progres" id="progres" role="progressbar" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1"></div>
+
+      <!-- 1. المتوفى -->
+      <div class="langkah aktif" data-langkah="1">
+        <h2>من المتوفى؟</h2>
+        <p class="langkah-ket">نحتاج هذا لنعرف إن كان الخلف زوجاً أو زوجة؛
+          فميراثُ كلٍّ منهما يختلف.</p>
+        <div class="pilih-grid" id="pilih-kelamin">
+          <button class="pilih" type="button" data-nilai="L" aria-pressed="false">
+            <svg class="ic" aria-hidden="true"><use href="#i-pria"></use></svg>
+            <span>ذكر</span>
+          </button>
+          <button class="pilih" type="button" data-nilai="P" aria-pressed="false">
+            <svg class="ic" aria-hidden="true"><use href="#i-wanita"></use></svg>
+            <span>أنثى</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 2. المال -->
+      <div class="langkah" data-langkah="2">
+        <h2>كم مقدار ما تركه الميت؟</h2>
+        <p class="langkah-ket">تقديرٌ تقريبي يكفي لرؤية الصورة. ويمكنك تغيير
+          الرقم متى شئت.</p>
+
+        <div class="mode-pilih" role="group" aria-label="طريقة إدخال المال">
+          <button type="button" data-mode-harta="total" aria-pressed="true">
+            <svg class="ic ic-sm" aria-hidden="true"><use href="#i-dompet"></use></svg>
+            إجمالي فقط
+          </button>
+          <button type="button" data-mode-harta="rincian" aria-pressed="false">
+            <svg class="ic ic-sm" aria-hidden="true"><use href="#i-kotak"></use></svg>
+            فصّل حسب النوع
+          </button>
+        </div>
+
+        <div id="harta-total">
+          <div class="uang-field">
+            <label class="uang-label" for="in-total">إجمالي المال المتروك</label>
+            <div class="uang-box besar">
+              <span class="rp">دج</span>
+              <input id="in-total" type="text" inputmode="numeric" value="0" data-uang>
+            </div>
+            <span class="uang-ket">المنزل، الأرض، الحساب، السيارة، الذهب،
+              العمل — كلها تُجمع في رقمٍ واحد.</span>
+          </div>
+        </div>
+
+        <div id="harta-rincian" hidden>
+          <p class="langkah-ket">اكتب الموجود فقط. المجموع يُحتسب تلقائياً،
+            وهذا التفصيل يُستعمل لإعطاء نصائح عن الأصول التي لا تُباع كالمنزل
+            والأرض.</p>
+          <div id="rincian-harta"></div>
+          <div class="rincian-total">
+            <span>إجمالي المال المتروك</span>
+            <strong id="rincian-jumlah">دج 0</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. الالتزامات -->
+      <div class="langkah" data-langkah="3">
+        <h2>هل من التزاماتٍ تُسوَّى قبل القسمة؟</h2>
+        <p class="langkah-ket">لا تُقسَّم التركة إلا بعد تكاليف التجهيز، وسداد
+          الديون، وتنفيذ الوصية. اتركها صفراً إن لم توجد.</p>
+
+        <div class="uang-field">
+          <label class="uang-label" for="in-biaya">تكاليف تجهيز الجنازة</label>
+          <div class="uang-box"><span class="rp">دج</span>
+            <input id="in-biaya" type="text" inputmode="numeric" value="0" data-uang></div>
+        </div>
+
+        <div class="uang-field">
+          <label class="uang-label" for="in-hutang">ديون المتوفى</label>
+          <div class="uang-box"><span class="rp">دج</span>
+            <input id="in-hutang" type="text" inputmode="numeric" value="0" data-uang></div>
+          <span class="uang-ket">بما في ذلك الالتزامات المؤجلة كالزكاة أو تكلفة
+            الحج المنذور.</span>
+        </div>
+
+        <div class="uang-field">
+          <label class="uang-label" for="in-wasiat">الوصية المتروكة</label>
+          <div class="uang-box"><span class="rp">دج</span>
+            <input id="in-wasiat" type="text" inputmode="numeric" value="0" data-uang></div>
+          <span class="uang-ket">لغير الورثة. تُقطَع تلقائياً إن تجاوزت ثلثَ
+            التركة.</span>
+        </div>
+
+        <!-- ملاحظة القانون الجزائري: لا مال مشتركاً مفروضاً بين الزوجين.
+             توضع مكان «خانة المال المشترك» التي لا وجود لها في القانون
+             الجزائري، حتى يعرف المستخدم موقف القانون بلا التباس. -->
+        <div class="pita pita-hukum" style="margin-top: var(--space-1); align-items: flex-start">
+          <svg class="ic" aria-hidden="true"><use href="#i-info"></use></svg>
+          <span>
+            <strong>هل يُدَّعى أن بعض المال ليس ملكاً للمتوفى؟</strong>
+            في القانون الجزائري لا ينشأ بين الزوجين «مال مشترك» تلقائياً
+            بخلاف بعض الدول؛ فالمالُ المكتسَب يُنسَب إلى من أحرزه في ذمته أو
+            بعقده، وفق الإثبات والعرف. وعند الوفاة يُعدُّ كل ما تُرك تركةً
+            للمتوفى حتى يثبت خلافه. المادة 37 من قانون الأسرة تنظّم
+            المساهمة في نفقات الأسرة ولا تُنشئ شيوعاً في المال. من ادّعى
+            ملكيةَ شيءٍ من التركة فعليه إثبات ذلك قبل القسمة.
+            <span class="pita-tekan">لهذا يُطبِّق هذا الحاسب قواعدَ الفرائض
+            مباشرةً على كل تركةِ المتوفى.</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- 4. الورثة -->
+      <div class="langkah" data-langkah="4">
+        <h2>من أفرادُ العائلة الأحياء؟</h2>
+        <p class="langkah-ket">أدخل الأحياء وقتَ الوفاة. من ليس موجوداً فاتركه
+          صفراً.</p>
+
+        <div class="mode-pilih" role="group" aria-label="طريقة إدخال الورثة">
+          <button type="button" data-mode="daftar" aria-pressed="true">
+            <svg class="ic ic-sm" aria-hidden="true"><use href="#i-daftar"></use></svg>
+            قائمة
+          </button>
+          <button type="button" data-mode="pohon" aria-pressed="false">
+            <svg class="ic ic-sm" aria-hidden="true"><use href="#i-pohon"></use></svg>
+            شجرة العائلة
+          </button>
+        </div>
+
+        <div id="mode-daftar">
+          <div id="grup-utama"></div>
+          <div id="grup-lain"></div>
+        </div>
+
+        <div id="mode-pohon" hidden>
+          <p class="langkah-ket">رتّب العائلة كما هي في الواقع. اضغط
+            <strong>إضافة</strong> لإضافة فرد، وأي شخصٍ تضغط عليه يمكنك تعديله
+            أو إضافة ولدٍ تحته.</p>
+          <div class="pita" style="margin-bottom: var(--space-5)">
+            <svg class="ic" aria-hidden="true"><use href="#i-info"></use></svg>
+            <span>هذه الطريقة أدق للعائلات المعقدة. الأحفاد يُضافون من داخل
+              بطاقة ولدهم، وأبناء الإخوة من داخل بطاقة أخيهم — فلا حاجة إلى
+              تخمين العلاقة.</span>
+          </div>
+          <div class="pohon-legenda">
+            <span><i class="l-pewaris"></i> المتوفى</span>
+            <span><i class="l-ada"></i> وارث محتمل</span>
+            <span><i class="l-bukan"></i> ليس وارثاً</span>
+            <span><i class="l-wafat"></i> توفي بالفعل</span>
+          </div>
+          <div class="pohon" id="pohon-isian"></div>
+          <p class="pohon-geser">مرّر إلى الجانب لرؤية العائلة كاملة.</p>
+        </div>
+      </div>
+
+      <!-- 5. الظروف الخاصة -->
+      <div class="langkah" data-langkah="5">
+        <h2>هل من ظروفٍ خاصة؟</h2>
+        <p class="langkah-ket">كلها اختيارية. وما تعلِّمه عليها نضيفه
+          ملاحظةً مهمة في النتيجة.</p>
+        <div id="kondisi-khusus"></div>
+        <div class="pita" style="margin-top: var(--space-6)">
+          <svg class="ic" aria-hidden="true"><use href="#i-info"></use></svg>
+          <span>كل مدخلاتك تُعالَج في هذا المتصفح فقط. لا يُرسَل ولا يُحفظ
+            ولا يُسجَّل أي شيءٍ في أي مكان.</span>
+        </div>
+      </div>
+
+      <div class="aksi-langkah">
+        <a class="btn btn-ghost" id="btn-beranda" href="index.html" aria-label="العودة إلى الرئيسية">
+          <svg class="ic ic-sm" aria-hidden="true"><use href="#i-kiri"></use></svg>
+        </a>
+        <button class="btn btn-ghost" type="button" id="btn-mundur" aria-label="العودة إلى الخطوة السابقة">
+          <svg class="ic ic-sm" aria-hidden="true"><use href="#i-kiri"></use></svg>
+        </button>
+        <button class="btn btn-primary" type="button" id="btn-maju">
+          متابعة <svg class="ic ic-sm"><use href="#i-kanan"></use></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ النتيجة ═══ -->
+  <section id="hasil" hidden aria-live="polite"></section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-note">
+        «الميراث» أداة حساب، <strong>وليست المصدر الأساسي</strong>. تحقق من
+        النتيجة ووثِّقها لدى عالمٍ أو مفتٍ موثوق، أو لدى قسم شؤون الأسرة
+        بالمحكمة، قبل قسمة المال الحقيقي.
+      </p>
+      <p style="margin-top: var(--space-4)">
+        <a href="rujukan.html">مراجع القرآن والحديث</a> &nbsp;·&nbsp;
+        <a href="https://github.com/touilfarouk/elmirat" target="_blank" rel="noopener noreferrer">مصدر الكود على GitHub</a>
+      </p>
+    </div>
+    <div class="footer-made">
+        الكود مفتوح — راجِعه وصحِّحه.<br>
+        Made with 🔥 in Algeria
+      </div>
+  </div>
+</footer>
+
+<script src="js/faraid/fraction.js?v=24"></script>
+<script src="js/faraid/heirs.js?v=24"></script>
+<script src="js/faraid/hijab.js?v=24"></script>
+<script src="js/faraid/shares.js?v=24"></script>
+<script src="js/faraid/ashabah.js?v=24"></script>
+<script src="js/faraid/special.js?v=24"></script>
+<script src="js/faraid/estate.js?v=24"></script>
+<script src="js/faraid/solve.js?v=24"></script>
+<script src="js/dalil.js?v=24"></script>
+<script src="js/khi.js?v=24"></script>
+<script src="js/advice.js?v=24"></script>
+<script src="js/export.js?v=24"></script>
+<script src="js/keluarga.js?v=24"></script>
+<script src="js/ui-pohon.js?v=24"></script>
+<script src="js/ui-pohon-edit.js?v=24"></script>
+<script src="js/ui-result.js?v=24"></script>
+<script src="js/ui-wizard.js?v=24"></script>
+<script src="js/ui-nav.js?v=24"></script>
+</body>
+</html>

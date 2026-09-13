@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الميراث — احسب تقسيم الميراث وفق القرآن والسنة</title>
+<meta name="description" content="أحكام الميراث في الإسلام مضبوطة. أدخل بيانات عائلتك وشاهد التقسيم في مخططٍ كاملٍ مع أدلته. مجاناً، دون تسجيل، ويُحسب في متصفحك أنت.">
+<meta name="theme-color" content="#FFF8F0">
+<link rel="icon" href="assets/mark-color.svg">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/tokens.css?v=24">
+<link rel="stylesheet" href="css/base.css?v=24">
+<link rel="stylesheet" href="css/app.css?v=24">
+<link rel="stylesheet" href="css/rtl.css?v=24">
+</head>
+<body>
+<a class="skip-link" href="#utama">الانتقال إلى المحتوى</a>
+
+<script src="js/sprite.js?v=24"></script>
+
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img src="assets/mark-color.svg" alt="">
+      <span class="nav-brand-teks">
+        <span class="nav-brand-nama">الميراث</span>
+        <span class="nav-brand-sub">by Touil</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" id="nav-toggle"
+            aria-expanded="false" aria-controls="nav-menu" aria-label="افتح القائمة">
+      <span class="nav-toggle-garis"></span>
+    </button>
+
+    <div class="nav-menu" id="nav-menu">
+      <a href="index.html">الرئيسية</a>
+      <a href="hitung.html">احسب</a>
+      <a href="rujukan.html">المراجع</a>
+      <a class="btn btn-dark btn-sm" href="hitung.html">ابدأ الحساب</a>
+    </div>
+  </div>
+</nav>
+
+<main id="utama">
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <!--
+      خلفية الزخرفة الهندسية الإسلامية (النجمة الثمانية / خاتم).
+      طبقتان بحجمين وحركتين مختلفتين لتبدو متعددة الطبقات، وكلتاهما شبه
+      شفافة حتى لا تزاحم النص. إضافة إلى الجو العام، تعلن هذه الزخرفة منذ
+      أول شاشة أن القواعد المستعملة هنا هي قواعد الميراث الإسلامي — وهو أمر
+      مفيدٌ للزائر غير المسلم الذي قد لا يعرف ذلك.
+    -->
+    <div class="hero-pola" aria-hidden="true">
+      <svg class="hero-pola-lapis hero-pola-besar" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="khatim-besar" width="120" height="120" patternUnits="userSpaceOnUse">
+            <g fill="none" stroke="currentColor" stroke-width="1.1">
+              <rect x="38" y="38" width="44" height="44"/>
+              <path d="M60 29 91 60 60 91 29 60Z"/>
+              <rect x="-22" y="-22" width="44" height="44"/>
+              <path d="M0 -31 31 0 0 31 -31 0Z"/>
+              <rect x="98" y="-22" width="44" height="44"/>
+              <path d="M120 -31 151 0 120 31 89 0Z"/>
+              <rect x="-22" y="98" width="44" height="44"/>
+              <path d="M0 89 31 120 0 151 -31 120Z"/>
+              <rect x="98" y="98" width="44" height="44"/>
+              <path d="M120 89 151 120 120 151 89 120Z"/>
+              <path d="M31 0 60 29M89 0 60 29M31 120 60 91M89 120 60 91M0 31 29 60M0 89 29 60M120 31 91 60M120 89 91 60"/>
+            </g>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#khatim-besar)"/>
+      </svg>
+
+      <svg class="hero-pola-lapis hero-pola-kecil" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="khatim-kecil" width="60" height="60" patternUnits="userSpaceOnUse">
+            <g fill="none" stroke="currentColor" stroke-width="0.9">
+              <rect x="19" y="19" width="22" height="22"/>
+              <path d="M30 14.5 45.5 30 30 45.5 14.5 30Z"/>
+            </g>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#khatim-kecil)"/>
+      </svg>
+    </div>
+
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <span class="lencana-syariat">
+            <svg class="ic ic-sm" aria-hidden="true"><use href="#i-kitab"></use></svg>
+            تقسيم الميراث وفق الشريعة الإسلامية
+          </span>
+          <h1>للميراث أحكامٌ مضبوطة.</h1>
+          <p class="hero-lead">
+            نزلت أحكامه كاملةً في القرآن الكريم وبيّنها رسول الله ﷺ، و
+            <span class="sorot">لم تتغيّر منذ ذلك الحين</span>. كل ما يَصعُب
+            هو حسابُه. وذاك ما نقوم به نيابةً عنك.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="hitung.html">
+              ابدأ الحساب <svg class="ic ic-sm" aria-hidden="true"><use href="#i-kanan"></use></svg>
+            </a>
+            <a class="btn btn-ghost" href="#cara">انظر كيف يعمل</a>
+          </div>
+          <p class="flav-caption" style="margin-top: var(--space-5)">
+            مجاناً · دون تسجيل · لا تُرسَل أي بيانات إلى أي مكان
+          </p>
+        </div>
+
+        <!-- عرض توضيحي متحرك -->
+        <div class="demo" id="demo" aria-label="مثال لمحاكاة تقسيم الميراث">
+          <div class="demo-tahap" id="demo-tahap"></div>
+          <div id="demo-isi" style="min-height: 268px"></div>
+          <div class="demo-titik" id="demo-titik"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ المشكلة ═══ -->
+  <section class="section" id="cara" style="background: var(--bg-secondary)">
+    <div class="wrap">
+      <div style="max-width: 62ch; margin-bottom: var(--space-12)">
+        <span class="overline">لماذا أنشأنا هذه الأداة</span>
+        <h2 class="flav-display-l">الأحكام واضحة، لكن قلّما يجرؤ أحدٌ على حسابها بنفسه.</h2>
+        <p class="flav-body" style="margin-top: var(--space-5)">
+          الأنصبة كسورٌ يجب جمعها، وهناك قواعدُ لمن يحجبُ من، وعشراتُ الحالات
+          الخاصة التي يختلف حلُّها عن النمط المعتاد. ونتيجة ذلك أن العائلات
+          تؤجّل القسمة سنواتٍ، أو تَقسِمُ «بالمساواة» — وهو ما لا يوافق الحكم
+          الشرعي. والحقيقة أن
+          <span class="sorot">الجواب محسومٌ، وليس مسألة ذوق</span>.
+        </p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card card-hover">
+          <div class="card-icon"><svg class="ic" aria-hidden="true" style="color:var(--color-flame)"><use href="#i-kitab"></use></svg></div>
+          <h3 class="flav-heading-m">المصدر الوحيد: الوحي</h3>
+          <p class="flav-body-sm" style="margin-top: var(--space-3)">
+            كل رقمٍ يخرج لك يمكن تتبُّعُه إلى آيةٍ أو حديث، يُعرَض بنصه العربي
+            وترجمته. لم نضِف قاعدةً واحدةً من عندنا.
+          </p>
+        </div>
+        <div class="card card-hover">
+          <div class="card-icon"><svg class="ic" aria-hidden="true" style="color:var(--color-flame)"><use href="#i-hati"></use></svg></div>
+          <h3 class="flav-heading-m">لا تخرج أي بيانات</h3>
+          <p class="flav-body-sm" style="margin-top: var(--space-3)">
+            كل الحسابات تجري في هاتفك أو حاسوبك. لا يصل خادمٌ إلى مقدار مالك،
+            ولا يُحفظ شيء، ولا يُسجَّل شيء.
+          </p>
+        </div>
+        <div class="card card-hover">
+          <div class="card-icon"><svg class="ic" aria-hidden="true" style="color:var(--color-flame)"><use href="#i-timbangan"></use></svg></div>
+          <h3 class="flav-heading-m">حتى الحالات المعقدة</h3>
+          <p class="flav-body-sm" style="margin-top: var(--space-3)">
+            23 نوعاً من الورثة، وقواعدُ الحجب، والعول، والرد، حتى الحالات
+            المسماة مثل العُمريَّتين والأكدريّة. مفروزةٌ بعشرات الحالات
+            الثابتة في كتب الفرائض.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ الخطوات ═══ -->
+  <section class="section">
+    <div class="wrap">
+      <span class="overline">ثلاث خطوات</span>
+      <h2 class="flav-display-l" style="max-width: 18ch">من الحيرة إلى رقمٍ واضحٍ في دقيقتين.</h2>
+
+      <div class="grid grid-3" style="margin-top: var(--space-10)">
+        <div class="card">
+          <span class="badge">الخطوة 1</span>
+          <h3 class="flav-heading-m" style="margin-top: var(--space-4)">أدخل وضع العائلة</h3>
+          <p class="flav-body-sm" style="margin-top: var(--space-3)">
+            مَن المتوفى، ومقدار ماله، وهل عليه دَين، ومن هم أفراد العائلة
+            الأحياء. يكفي أن تضغط على زر الإضافة أو النقصان.
+          </p>
+        </div>
+        <div class="card">
+          <span class="badge">الخطوة 2</span>
+          <h3 class="flav-heading-m" style="margin-top: var(--space-4)">شاهد التقسيم</h3>
+          <p class="flav-body-sm" style="margin-top: var(--space-3)">
+            مخططٌ دائري، وكسورٌ، والمبلغُ بكل وريث. اضغط على أي وريث لترى سبب
+            استحقاقِه ودليله. غيِّر المدخلات فترى النتيجة تتغير فوراً.
+          </p>
+        </div>
+        <div class="card">
+          <span class="badge">الخطوة 3</span>
+          <h3 class="flav-heading-m" style="margin-top: var(--space-4)">خذ النتيجة معك</h3>
+          <p class="flav-body-sm" style="margin-top: var(--space-3)">
+            احفظها ملف PDF أو صورةً لِما تشاركُه العائلة، أو خذها إلى أهل
+            العلم أو إلى قسم شؤون الأسرة بالمحكمة مادةً أوليةً للنقاش.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ الحدود — الصدق في المقدمة ═══ -->
+  <section class="section" style="padding-top: 0">
+    <div class="wrap">
+      <div class="batasan">
+        <div class="batasan-kepala">
+          <span class="badge badge-muted">حدود الأداة</span>
+          <h2 class="flav-heading-l" style="margin-top: var(--space-3)">ما ينبغي أن تعرفه
+            قبل الاستخدام</h2>
+        </div>
+        <div class="batasan-poin">
+          <div class="batasan-item">
+            <span class="batasan-ikon">
+              <svg class="ic" aria-hidden="true"><use href="#i-timbangan"></use></svg>
+            </span>
+            <div>
+              <strong>تعتمد مذهب الإمام مالك</strong>
+              <p>وهو المذهب الرسمي في الجزائر الذي أخذ به قانون الأسرة. في
+                مواضعَ معدودةٍ قد ترى المحكمة رأياً مغايراً — وبسطُ القانون
+                الجزائري يختلف عن القاعدة الفرائضية في دقائق معيّنة — ونُبيّن
+                ذلك صراحةً في صفحة النتيجة، لا نخفيه.</p>
+            </div>
+          </div>
+          <div class="batasan-item">
+            <span class="batasan-ikon">
+              <svg class="ic" aria-hidden="true"><use href="#i-waspada"></use></svg>
+            </span>
+            <div>
+              <strong>أربع حالات لا نحسبها تلقائياً</strong>
+              <p>الجنين في بطن أمه، والوارثُ المفقود، والأقاربُ خارج الورثة
+                الثلاثة والعشرين، والجدّ مع اجتماع نوعين من الإخوة. في هذه
+                الحالات نقول ذلك بصراحةٍ ونوجّهك إلى أهل العلم أو إلى قسم
+                شؤون الأسرة، لا نُخمِّن.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ الكود المفتوح والمساهمة ═══ -->
+  <section class="section" style="padding-top: 0" id="kontribusi">
+    <div class="wrap">
+      <div class="terbuka">
+        <div class="terbuka-kiri">
+          <span class="overline">الكود مفتوح</span>
+          <h2 class="flav-display-m" style="max-width: 16ch">افحص بنفسك، ولا تأخذ
+            كلامنا كأنه مسلَّمة.</h2>
+
+          <p class="flav-body" style="margin-top: var(--space-5)">
+            الأمر يتعلق بأحكام الدين ومال العائلة، لذلك لا نطلب منك أن تثق في
+            صندوقٍ أسود. كل كود الحساب يمكن لأي شخص قراءته:
+            <span class="sorot">أكوادُ الفرائض، وجدولُ من يحجب من، وعشراتُ
+            حالات الاختبار</span> التي أجوبتُها مأخوذةٌ من كتب الفرائض.
+          </p>
+
+          <div class="dalil" style="margin-top: var(--space-6)">
+            <div class="dalil-rujukan">رواه مسلم رقم 1631</div>
+            <div class="dalil-arab" lang="ar" dir="rtl">إِذَا مَاتَ الإِنْسَانُ انْقَطَعَ عَنْهُ عَمَلُهُ إِلَّا مِنْ ثَلَاثَةٍ: إِلَّا مِنْ صَدَقَةٍ جَارِيَةٍ، أَوْ عِلْمٍ يُنْتَفَعُ بِهِ، أَوْ وَلَدٍ صَالِحٍ يَدْعُو لَهُ</div>
+            <div class="dalil-terjemah">
+              أي: انقطع أثرُ عملِه بعد موته إلا من هذه الثلاث؛ فتبقى أجورُها
+              جاريةً له.
+            </div>
+            <div class="dalil-sumber">عن أبي هريرة رضي الله عنه. صحيح.</div>
+            <div class="dalil-tautan">
+              <a href="https://www.hadits.id/hadits/muslim/1631" target="_blank" rel="noopener noreferrer">
+                <svg class="ic ic-sm" aria-hidden="true"><use href="#i-tautan"></use></svg>
+                اقرأ في hadits.id — مسلم 1631
+              </a>
+            </div>
+          </div>
+
+          <p class="flav-body-sm" style="margin-top: var(--space-5)">
+            إذا كان عندك علمٌ يجعل هذه الأداة أدق، فأسهم به. لا لأجلنا — بل
+            لأي عائلةٍ مسلمةٍ تتحيّر في قسمة تركة والديها.
+          </p>
+
+          <div class="btn-row" style="margin-top: var(--space-6)">
+            <a class="btn btn-dark" href="https://github.com/touilfarouk/elmirat"
+               target="_blank" rel="noopener noreferrer">
+              <svg class="ic ic-sm ic-isi" aria-hidden="true"><use href="#i-github"></use></svg>
+              انظر الكود على GitHub
+            </a>
+            <a class="btn btn-ghost" href="https://github.com/touilfarouk/elmirat/issues/new"
+               target="_blank" rel="noopener noreferrer">
+              أبلغ عن خطأ
+            </a>
+          </div>
+        </div>
+
+        <div class="terbuka-kanan">
+          <!-- مقتطف حقيقي من كود محرك الفرائض، ليس زخرفة. -->
+          <div class="kode-kartu">
+            <div class="kode-bar">
+              <span class="kode-titik"></span><span class="kode-titik"></span><span class="kode-titik"></span>
+              <span class="kode-nama">js/faraid/shares.js</span>
+            </div>
+            <pre class="kode-isi"><code><span class="k-c">// الزوج: النصف إن لم يوجد ولد،</span>
+<span class="k-c">// والربع إن وُجد. النساء: 12</span>
+<span class="k-k">if</span> (ada(<span class="k-s">'suami'</span>)) {
+  set(<span class="k-s">'suami'</span>, faru ? F(<span class="k-n">1</span>, <span class="k-n">4</span>) : F(<span class="k-n">1</span>, <span class="k-n">2</span>));
+}
+
+<span class="k-c">// الأم: السدس مع وجود الولد،</span>
+<span class="k-c">// أو مع وجود أخوَيْن فأكثر</span>
+<span class="k-k">if</span> (ada(<span class="k-s">'ibu'</span>)) {
+  set(<span class="k-s">'ibu'</span>, (faru || saudara &gt;= <span class="k-n">2</span>)
+    ? F(<span class="k-n">1</span>, <span class="k-n">6</span>) : F(<span class="k-n">1</span>, <span class="k-n">3</span>));
+}</code></pre>
+          </div>
+
+          <div class="kontrib">
+            <div class="kontrib-judul">أكثر ما نحتاج إليه</div>
+            <ul class="kontrib-daftar">
+              <li>
+                <svg class="ic ic-sm" aria-hidden="true"><use href="#i-kitab"></use></svg>
+                <span><strong>تصحيح الأدلة</strong> ممّن يفقه الفرائض — رقم
+                  الحديث، أو تخريجه، أو ترجمةٍ خاطئة.</span>
+              </li>
+              <li>
+                <svg class="ic ic-sm" aria-hidden="true"><use href="#i-timbangan"></use></svg>
+                <span><strong>حالات اختبار جديدة</strong> من كتب الفرائض أو
+                  أحكام المحاكم، مع جوابها المعتمد.</span>
+              </li>
+              <li>
+                <svg class="ic ic-sm" aria-hidden="true"><use href="#i-waspada"></use></svg>
+                <span><strong>تقارير خطأ في الحساب</strong> مع قائمة الورثة،
+                  حتى نتمكن من إعادة إنتاج المشكلة.</span>
+              </li>
+            </ul>
+            <p class="kontrib-kaki">
+              لا تعرف البرمجة؟ اكتب المسألة فقط في <em>Issues</em> بلغةٍ
+              عادية. الذي نحتاجه العلم، لا الكود.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ دعوة ═══ -->
+  <section class="section" style="padding-top: 0">
+    <div class="wrap">
+      <div style="background: var(--bg-dark); border-radius: var(--radius-cta); padding: var(--space-12) var(--space-6); text-align: center; position: relative; overflow: hidden">
+        <div style="position:absolute; inset:0; background: radial-gradient(ellipse 60% 80% at 50% 110%, rgba(232,57,29,0.35), transparent 65%)"></div>
+        <div style="position: relative">
+          <h2 class="flav-display-m" style="color: var(--fg-on-dark); max-width: 20ch; margin-inline: auto">
+            العائلة أحقُّ أن تعرف حقَّها، لا أن تخمِّن.
+          </h2>
+          <p style="color: var(--fg-on-dark-dim); margin: var(--space-5) auto var(--space-8); max-width: 46ch">
+            احسب الآن، مجاناً. وإذا احتجت لاحقاً إلى عرض النتيجة على أهل
+            العلم أو المحكمة، فاحفظها ملف PDF.
+          </p>
+          <a class="btn btn-primary" href="hitung.html">
+            ابدأ الحساب <svg class="ic ic-sm" aria-hidden="true"><use href="#i-kanan"></use></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-note">
+        «الميراث» أداة حساب، <strong>وليست المصدر الأساسي</strong>. تحقق من
+        النتيجة ووثِّقها لدى عالمٍ أو مفتٍ موثوق، أو لدى قسم شؤون الأسرة
+        بالمحكمة، قبل قسمة المال الحقيقي.
+      </p>
+      <p style="margin-top: var(--space-4)">
+        <a href="rujukan.html">مراجع القرآن والحديث</a> &nbsp;·&nbsp;
+        <a href="https://github.com/touilfarouk/elmirat" target="_blank" rel="noopener noreferrer">مصدر الكود على GitHub</a>
+      </p>
+    </div>
+    <div class="footer-made">
+        الكود مفتوح — راجِعه وصحِّحه.<br>
+        Made with 🔥 in Algeria
+      </div>
+  </div>
+</footer>
+
+<script src="js/faraid/fraction.js?v=24"></script>
+<script src="js/faraid/heirs.js?v=24"></script>
+<script src="js/faraid/hijab.js?v=24"></script>
+<script src="js/faraid/shares.js?v=24"></script>
+<script src="js/faraid/ashabah.js?v=24"></script>
+<script src="js/faraid/special.js?v=24"></script>
+<script src="js/faraid/estate.js?v=24"></script>
+<script src="js/faraid/solve.js?v=24"></script>
+<script src="js/ui-landing.js?v=24"></script>
+<script src="js/ui-nav.js?v=24"></script>
+</body>
+</html>

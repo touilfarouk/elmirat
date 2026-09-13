@@ -113,7 +113,7 @@
     }
 
     langkah.push({
-      id: 'tirkah', label: 'مقدار التركة الصالح للتقسيم', nilai: sisa, tipe: 'hasil'
+      id: 'tirkah', label: 'مقدار الميراث الصالح للتقسيم', nilai: sisa, tipe: 'hasil'
     });
 
     return {

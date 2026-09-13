@@ -150,14 +150,14 @@
           final[k] = f.div(fardh[k], totalFardh);
         });
         out.perhitungan.langkah.push(
-          'مجموع الأنصباء المقدرة تجاوزَ موجود التركة (' + totalSiham + '/' + am +
+          'مجموع الأنصباء المقدرة تجاوزَ موجود الميراث (' + totalSiham + '/' + am +
           '). هنا يُرفَع المقام إلى ' + totalSiham +
           ' — ويُسمَّى ذلك العول — فتُنقَص أنصبةُ الجميع بنسبةٍ واحدة ' +
           'ولم يُهضَم أحد.');
         catatan.push({
           id: 'aul', tingkat: 'info',
           teks: 'وقع العول: نقُصت أنصبةُ الجميع بنسبةٍ واحدةٍ لأن مجموع الأنصباء ' +
-                'المقدرة تجاوزَ موجودَ التركة.'
+                'المقدرة تجاوزَ موجودَ الميراث.'
         });
       } else {
         var sisa = f.sub(f.ONE, totalFardh);
@@ -275,7 +275,7 @@
       // penjelasan ini, kartunya tampil kosong dan terlihat seperti bug.
       if (f.isZero(b) && !alasan[def.key]) {
         alasan[def.key] = out.perhitungan.aul
-          ? 'استُحقَّ أخذُ الباقي، لكن فروضَ الورثة الآخرين التهمت التركةَ كلَّها فلم يتبقَّ شيء. ' +
+          ? 'استُحقَّ أخذُ الباقي، لكن فروضَ الورثة الآخرين التهمت الميراثَ كلَّها فلم يتبقَّ شيء. ' +
             'هذه نتيجةٌ طبيعية للعول، لا بمعنى الحجب.'
           : 'استُحقَّ أخذُ الباقي، لكن لم يتبقَّ مالٌ بعد دفع جميع الفروض.';
         dalilKey[def.key] = dalilKey[def.key] || 'hadits-ashabah';

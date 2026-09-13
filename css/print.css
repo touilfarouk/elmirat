@@ -45,7 +45,7 @@
 
   /* Kop dokumen */
   #hasil::before {
-    content: "تَقْسِيمُ التَّرِكَةِ بِمَا شَرَعَهُ الإِسْلَامُ — حُسِبَ بِأَدَاةِ El Miraath by Touil";
+    content: "تَقْسِيمُ المِيرَاثِ بِمَا شَرَعَهُ الإِسْلَامُ — حُسِبَ بِأَدَاةِ El Miraath by Touil";
     display: block;
     font-family: var(--font-body);
     font-size: 8pt;

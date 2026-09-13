@@ -45,7 +45,7 @@
       }
     },
     {
-      judul: 'الخطوة 2 — التركة والالتزامات',
+      judul: 'الخطوة 2 — الميراث والالتزامات',
       isi: function () {
         return hasil.harta.langkah.map(function (l, i) {
           return '<div class="demo-baris" style="opacity:0;animation:naik .4s ease ' +
@@ -96,7 +96,7 @@
           '<div class="dalil-rujukan">القرآن الكريم — سورة النساء الآية 11</div>' +
           '<div class="dalil-arab" lang="ar" dir="rtl">يُوصِيكُمُ اللَّهُ فِي أَوْلَادِكُمْ ۖ لِلذَّكَرِ مِثْلُ حَظِّ الْأُنثَيَيْنِ</div>' +
           '<div class="dalil-terjemah">يوصيكم الله في أولادكم: للذَّكر مثلُ حظِّ الأنثيين — وهو ' +
-          'الأساس الذي بُني عليه تقسيم هذه التركة.</div>' +
+          'الأساس الذي بُني عليه تقسيم هذه الميراث.</div>' +
           '</div>' +
           '<p class="flav-body-sm" style="margin-top:var(--space-4)">كل رقمٍ أعلاه مردودٌ إلى ' +
           'آيته أو حديثه، ويمكنك قراءته بنفسك في صفحة النتيجة.</p>';

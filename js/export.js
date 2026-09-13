@@ -350,7 +350,7 @@
     // ── Kepala ───────────────────────────────────────────────────
     ctx.fillStyle = FLAME;
     ctx.font = '700 20px "Cairo", "DM Sans", sans-serif';
-    ctx.fillText('قِسْمَةُ التَّرِكَةِ عَلَى مَا شَرَعَهُ الإِسْلَامُ', PAD, y);
+    ctx.fillText('قِسْمَةُ المِيرَاثِ عَلَى مَا شَرَعَهُ الإِسْلَامُ', PAD, y);
     y += 52;
 
     ctx.fillStyle = CHARCOAL;

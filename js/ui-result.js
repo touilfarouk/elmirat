@@ -115,7 +115,7 @@
     }).join('');
 
     return '<div class="donut-wrap">' +
-      '<div class="donut"><svg viewBox="0 0 200 200" role="img" aria-label="مخطط تقسيم التركة">' +
+      '<div class="donut"><svg viewBox="0 0 200 200" role="img" aria-label="مخطط تقسيم الميراث">' +
       segmen + '</svg>' +
       '<div class="donut-tengah"><span class="angka" title="' + rp(hasil.harta.tirkah) + '">' +
       rpRingkas(hasil.harta.tirkah) + '</span>' +
@@ -321,7 +321,7 @@
     html += '<div class="wrap wrap-narrow hasil-kepala-besar">' +
       '<img class="hitung-flav" src="assets/flav-confident.svg" alt="">' +
       '<span class="overline">النتيجة</span>' +
-      '<h2 class="flav-display-l">هكذا تُقسَّم التركة</h2>' +
+      '<h2 class="flav-display-l">هكذا تُقسَّم الميراث</h2>' +
       '<p class="flav-body" style="margin-top:var(--space-4)">' +
       (penerima.length
         ? 'من أصل <strong>' + rp(hasil.harta.tirkah) + '</strong> صالحٍ للتقسيم، ' +
@@ -373,7 +373,7 @@
     // ── Ledger ─────────────────────────────────────────────────────
     html += '<div class="wrap wrap-narrow"><div class="blok">' +
       '<h3 class="blok-judul">المال القابل للقسمة</h3>' +
-      '<p class="blok-ket">لا تُقسَّم التركة من مجمل المال مباشرة. تُسدَّد أولاً تكاليف ' +
+      '<p class="blok-ket">لا تُقسَّم الميراث من مجمل المال مباشرة. تُسدَّد أولاً تكاليف ' +
       'الجنازة ثم الديون ثم الوصية — وهذا الترتيب ورد ذاته في الآيتين 11 و12 من سورة النساء.</p>' +
       renderLedger(hasil, opts.diam) + '</div></div>';
 

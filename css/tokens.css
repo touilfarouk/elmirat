@@ -5,10 +5,8 @@
  * Fonts: Bricolage Grotesque (display) + DM Sans (body).
  * Cairo is added as the Arabic UI font and Amiri for the Arabic Qur'an/hadith
  * naskh. Latin glyphs still fall back to the primary fonts first.
- * The @import below loads them automatically. For best performance, ALSO add a
- * matching <link rel="preconnect"> to fonts.gstatic.com in your <head>.
+ * The <link rel="stylesheet"> to Google Fonts is kept in each HTML <head>.
  */
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@300;400;500;600;700&family=Cairo:wght@400;600;700;800&family=Amiri:wght@400;700&display=swap');
 
 /* ═══════════════════════════════════════════════════
    BASE COLOR TOKENS

@@ -1,0 +1,69 @@
+/*
+ * RTL overrides for the Arabic (dir="rtl") build.
+ *
+ * Flexbox, grid, and text flow mirror automatically once the page is dir="rtl".
+ * This file only fixes the handful of rules that use physical properties
+ * (text-align: left, margin-left, border-left, …) so they mirror too. It is
+ * loaded AFTER app.css on every page whose <html> has lang="ar" dir="rtl".
+ */
+
+/* Directional arrows (i-kanan / i-kiri) point the other way in RTL.
+   Flipping the glyph keeps "next/forward" pointing left and "back" pointing
+   right without touching the markup in HTML or JS. */
+[dir="rtl"] use[href="#i-kanan"],
+[dir="rtl"] use[href="#i-kiri"] { transform: scaleX(-1); }
+
+/* Accordion headers */
+[dir="rtl"] .lipat-tombol { text-align: right; }
+[dir="rtl"] .lipat-tombol .panah { margin-left: 0; margin-right: auto; }
+[dir="rtl"] .lipat-hitung { margin-left: var(--space-2); margin-right: auto; }
+
+/* Wizard / result secondary buttons and lists */
+[dir="rtl"] .ceklis { text-align: right; }
+[dir="rtl"] .hasil-kepala { text-align: right; }
+[dir="rtl"] .apx-kepala { text-align: right; }
+[dir="rtl"] .lembar-opsi { text-align: right; }
+[dir="rtl"] .nav-menu a:not(.btn),
+[dir="rtl"] .nav-menu button:not(.btn) { text-align: right; }
+
+/* Result card colour bar sits on the reading-edge */
+[dir="rtl"] .hasil-warna { margin-right: 0; margin-left: var(--space-1); }
+
+/* Quran quote card: the accent rule moves from left to right */
+[dir="rtl"] .dalil {
+  border-left: none;
+  border-right: 3px solid var(--color-amber);
+  padding-left: 0;
+  padding-right: var(--space-4);
+}
+[dir="rtl"] .terbuka .dalil { border-right-color: var(--color-flame); }
+[dir="rtl"] .lembar-catat {
+  border-left: none;
+  border-right: 3px solid var(--color-flame);
+}
+
+/* Numbered / dotted lists hand their numbers back to the reading-edge */
+[dir="rtl"] .urutan li { padding-left: 0; padding-right: 34px; }
+[dir="rtl"] .urutan li::before { left: auto; right: 0; }
+[dir="rtl"] .urutan-titik li::before { left: auto; right: 7px; }
+
+/* Checklist bullets inside the step-by-step advice cards */
+[dir="rtl"] .saran-poin li { padding-left: 0; padding-right: 26px; }
+[dir="rtl"] .saran-poin li::before { left: auto; right: 0; }
+
+/* Family tree */
+[dir="rtl"] .pohon-nama em { margin-left: 0; margin-right: 2px; }
+[dir="rtl"] .pohon-bilah-judul { margin-right: 0; margin-left: var(--space-1); }
+
+/* Landing demo rows: value pushed to the far (left) edge */
+[dir="rtl"] .demo-baris b { margin-left: 0; margin-right: auto; }
+
+/* Code snippets and formula blocks stay LTR — they are code, not prose */
+[dir="rtl"] .kode-isi,
+[dir="rtl"] .rumus { direction: ltr; text-align: left; }
+[dir="rtl"] .kode-nama { margin-left: 0; margin-right: auto; }
+
+/* Report header on the print/PDF copy */
+@media print {
+  [dir="rtl"] .hasil-kepala-besar { text-align: right; }
+}

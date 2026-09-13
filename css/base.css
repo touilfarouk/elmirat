@@ -528,12 +528,12 @@ h1, h2, h3, h4 {
 
 .skip-link {
   position: absolute;
-  left: -9999px;
-  top: var(--space-2);
+  top: -9999px;
+  left: 0;
   z-index: 100;
   background: var(--color-charcoal);
   color: var(--fg-on-dark);
   padding: var(--space-3) var(--space-5);
   border-radius: var(--radius-pill);
 }
-.skip-link:focus { left: var(--space-5); }
+.skip-link:focus { top: var(--space-2); left: var(--space-5); }

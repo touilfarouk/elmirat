@@ -26,6 +26,34 @@
 
 ---
 
+## لقطات من الموقع
+
+<p align="center">
+  <img src="docs/gambar/ar-beranda.png" alt="الصفحة الرئيسية" width="760">
+  <br>
+  <small>الصفحة الرئيسية مع العرض التوضيحي المتحرك</small>
+</p>
+
+<p align="center">
+  <img src="docs/gambar/ar-hitung.png" alt="معالج الإدخال" width="760">
+  <br>
+  <small>معالج الإدخال — المتوفى، المال، قائمة الورثة أو شجرة العائلة</small>
+</p>
+
+<p align="center">
+  <img src="docs/gambar/ar-rujukan.png" alt="صفحة المراجع" width="760">
+  <br>
+  <small>صفحة المراجع — أدلة القرآن والحديث لتقسيم الميراث</small>
+</p>
+
+<p align="center">
+  <img src="docs/gambar/ar-uji.png" alt="الاختبارات" width="760">
+  <br>
+  <small>97 حالة اختبار بأجوبة ثابتة في كتب الفرائض</small>
+</p>
+
+---
+
 ## المميزات
 
 - **طريقتان لإدخال الورثة:** قائمة سريعة بخانات `+/−`، أو شجرة عائلة دقيقة تُبنى كما هي فعلًا.
